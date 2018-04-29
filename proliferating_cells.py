@@ -85,7 +85,7 @@ class pc(general_cell):
         Differentiate current (proliferating) cell into senescent cell.
 
         If the cell has split enough times and passed its Hayflick limit,
-        it will differentiate, else the cell remains unchanged and continues
+        it will transition, else the cell remains unchanged and continues
         :return: Either unchanged cell or new senescent cell
         """
         if self.turnover == self.max_turnover:
@@ -133,7 +133,7 @@ class pc(general_cell):
             sa = self.area / 1.75
             self.area = sa * 2
         self.radius = math.sqrt(self.area/math.pi)
-        print(self.stage)
+        # print(self.stage)
         return self.mitosis()
 
     def quiescence(self):

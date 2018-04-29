@@ -84,10 +84,10 @@ def growth_curve(num_cells, directory):
     :return: A graph showing change in number of agents over time
     """
     fig = plt.figure()
-    plt.plot(num_cells[0, :], 'g', label='Senescent cells')
+    plt.plot(num_cells[0, :], 'g', label='SC')
     plt.hold(True)
-    plt.plot(num_cells[1, :], 'r', label='Proliferating cells')
-    plt.plot(num_cells[2, :], 'b', label='Quiescent cells')
+    plt.plot(num_cells[1, :], 'r', label='PC')
+    plt.plot(num_cells[2, :], 'b', label='QC')
     fig.suptitle('growth_curve')
     plt.xlabel('interation')
     plt.ylabel('number of cells')

@@ -95,10 +95,6 @@ class environment:
         for n in range(len(self.senescent_cells)):
             if x1 < self.senescent_cells[n].pos[0] < x2:
                 self.senescent_cells[n].kill_cell()
-
-        for n in range(len(self.senescent_cells)):
-            if self.senescent_cells[n].pos[0] > x1 and self.senescent_cells[n].pos[0] < x2:
-                self.senescent_cells[n].kill_cell()
                 
         for n in range(len(self.proliferating_cells)):
             if x1 < self.proliferating_cells[n].pos[0] < x2:
@@ -112,3 +108,10 @@ class environment:
         self.proliferating_cells = ([a for a in self.proliferating_cells if not a.dead])
         self.senescent_cells = ([a for a in self.senescent_cells if not a.dead])
         self.quiescent_cells = ([a for a in self.quiescent_cells if not a.dead])
+        print("Confluence Sheet: SC = %s, PC = %s, QC = %s." % (sc.num_sc,pc.num_pc,qc.num_qc))
+        percentage = (sc.num_sc/pc.num_pc)*100
+        print("Percentage senescence at confluence = %s" % (percentage))
+        qc.num_qc = sum([isinstance(agent, qc) for agent in self.quiescent_cells])
+        sc.num_sc = sum([isinstance(agent, sc) for agent in self.senescent_cells])
+        pc.num_pc = sum([isinstance(agent, pc) for agent in self.proliferating_cells])
+
