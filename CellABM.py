@@ -82,7 +82,7 @@ def CellABM(size, nsc, npc, steps, wsize, directory, freq=0, labels=False):
                 counter += 1
             else:
                 time = n_it - timer
-                if time > 2:  # Quiescent cells take an iteration or two to differentiate back to proliferating cells
+                if time > 12:  # 2:  # Quiescent cells take an iteration or two to differentiate back to proliferating cells
                     print("CONFLUENCE DETECTED, time taken: %s itteration == %s hours." % (time, time*6))
                     print('Senescent cells = %s | Endothelial cells = %s | Quiescent cells = %s' % (sc.num_sc,
                                                                                                     pc.num_pc,

@@ -57,7 +57,7 @@ class environment:
             radius = random.randint(10,50) 
             area = math.pi*(radius*radius)
             pos = [radius+(round(rand(), 3))*(self.size-(2*radius)), radius+(round(rand(), 3))*(self.size-(2*radius))]
-            stage = np.ceil(rand()*4380)
+            stage = np.ceil(rand()*26280)  # 4380)
             direc = rand()*2*np.pi
             turnover = 1
             senescent_cells.append(sc(ID, stage, pos, direc, turnover, radius, area))
@@ -68,7 +68,7 @@ class environment:
             radius = random.randint(5,10)
             area = math.pi*(radius*radius)
             pos = [radius+(round(rand(), 3))*(self.size-(2*radius)), radius+(round(rand(), 3))*(self.size-(2*radius))]
-            stage = np.ceil(rand()*4)
+            stage = np.ceil(rand()*24)  # 4)
             direc = rand()*2*np.pi
             turnover = 1
             proliferating_cells.append(pc(ID, stage, pos, direc, turnover, radius, area))

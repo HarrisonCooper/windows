@@ -36,9 +36,9 @@ class pc(general_cell):
     :num_pc: The total number of proliferative cells
     """
     min_radius = 4.9
-    max_speed = 360  # move at 1micrometer a min
+    max_speed = 60  # 360  # move at 1micrometer a min
     max_direc = round((2.0/3)*math.pi, 3)
-    max_stage = 4
+    max_stage = 24 # 4
     max_turnover = 50  # Hayflick limit of 50
     num_pc = 0
 
@@ -121,15 +121,15 @@ class pc(general_cell):
         doubled in size.
         :return: The grown cell
         """
-        if self.stage == 1:                 # Increase original size by 1/4
+        if self.stage == 6:  # 1:                 # Increase original size by 1/4
             self.area *= 1.25
-        elif self.stage == 2:               # Decrease by 1/4 to achieve original, then increase by 2/4
+        elif self.stage == 12:  # 2:               # Decrease by 1/4 to achieve original, then increase by 2/4
             sa = self.area / 1.25
             self.area = sa * 1.5
-        elif self.stage == 3:               # Decrease by 2/4 to achieve original, the increase by 3/4
+        elif self.stage == 18:  # 3:               # Decrease by 2/4 to achieve original, the increase by 3/4
             sa = self.area / 1.5
             self.area = sa * 1.75
-        else:                               # Decrease by 3/4 to achieve original, then double
+        elif self.stage == 24:                               # Decrease by 3/4 to achieve original, then double
             sa = self.area / 1.75
             self.area = sa * 2
         self.radius = math.sqrt(self.area/math.pi)
