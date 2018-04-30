@@ -74,7 +74,7 @@ def CellABM(size, nsc, npc, steps, wsize, directory, freq=0, labels=False):
         When the number of quiescent cells has passed the threshold for a second time,
         the simulation detects this as a new confluence, halting the program.
         """
-        if qc.num_qc >= (pc.num_pc/4):
+        if qc.num_qc >= (pc.num_pc/3):  # 4):
             if counter == 0:
                 env.wound(wsize)  # Remove a strip of cells
                 print("***WOUNDED***")
