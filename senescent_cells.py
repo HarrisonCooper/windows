@@ -30,7 +30,7 @@ class sc(general_cell):
     min_radius = 4.9
     max_speed = 0  # Senescent cells don't move
     max_direc = round((2.0/3)*math.pi, 3)
-    max_stage = 26280 # 4380  # represents 3 years
+    max_stage = 4380  # represents 3 years
     num_sc = 0
     
     def __init__(self, ID=[], stage=[], pos=[], direc=[], turnover=[], radius=[], area=[]):
@@ -62,7 +62,7 @@ class sc(general_cell):
         :return: The cell with incremented stage and either the same size or larger
         """
         if self.radius < 50:
-            self.radius +=  0.14 # 0.8
+            self.radius += 0.8
             self.area = math.pi*(self.radius*self.radius)
             # self.area = self.area * (1.25)
             # self.radius = math.sqrt(self.area/math.pi)

@@ -30,7 +30,7 @@ class qc(general_cell):
     min_radius = 4.9
     max_speed = 0  # Quiescent cells cannot move
     max_direc = round((2.0/3)*math.pi, 3)
-    max_stage = 87600  # 240  # each level = 6hrs of real time
+    max_stage = 240  # each level = 6hrs of real time
     num_qc = 0
     
     def __init__(self, ID=[], stage=[], pos=[], direc=[], turnover=[], radius=[], area=[]):
